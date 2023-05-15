@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/view_tree.css">
+
+    <title>Results</title>
+</head>
+<body background="/static/images/background.jpeg">
+    <div class="container">
+        <div class="nav-bar">
+            <div class="left-nav">
+                <h1 class="site-title">Arbotrary</h1>
+                <p>A site to track randomly planted trees!</p>
+            </div>
+            <div class="middle-nav">
+                <img class="tree-pic" src="/static/images/tree_image_2.png" alt="">
+            </div>
+            <div class="right-nav">
+                <h1 class="users_name">Welcome {{user.first_name}} {{user.last_name}}</h1>
+                <div class="nav-buttons">
+                    <a href="/trees" class="nav-button" >Home</a>
+                    <a class="nav-button" href="/trees/user">My Trees!</a>
+                    <a class="nav-button" href="/trees/create">Add a new Tree!</a>
+                    <a class="nav-button" href="/logout">Log Out</a>
+                </div>
+            </div>
+        </div>
+    <div class="page">
+        <div class="tree-details">
+            <div class="details-body">
+                <h1>{{ tree['species'] }}</h1>
+                <h2>Location:</h2>
+                <h1 class="answers">{{tree['location']}}</h1>
+                <h2>Reason:</h2> 
+                <h3 class="answers">{{tree['reason']}}</h3>
+                <h4>Date Planted: {{tree['date_planted']}}</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

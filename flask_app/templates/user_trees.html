@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/homepage.css">
+
+    <title>Results</title>
+</head>
+
+<body background="/static/images/background.jpeg">
+    <div class="container">
+        <div class="nav-bar">
+            <div class="left-nav">
+                <h1 class="site-title">Arbotrary</h1>
+                <p>A site to track randomly planted trees!</p>
+            </div>
+            <div class="middle-nav">
+                <img class="tree-pic" src="/static/images/tree_image_2.png" alt="">
+            </div>
+            <div class="right-nav">
+                <h1 class="users_name">Welcome {{user.first_name}} {{user.last_name}}</h1>
+                <div class="nav-buttons">
+                    <a class="nav-button" href="/trees">Home</a>
+                    <a class="nav-button" href="/trees/create">Plant a Tree!</a>
+                    <a class="nav-button" href="/logout">Log Out</a>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="page">
+            <h2 class="head-of-table">Manage Your Trees:</h2>
+            <table class="tree-table">
+                <thead>
+                    <tr>
+                        <th>Species</th>
+                        <th>Date Planted</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tree in trees %}
+                    <tr>
+                    {% if session['user_id'] == tree.creator.id%}
+                        <td>{{tree.species}}</td>
+                        <td>{{tree.date_planted}}</td>
+                        <td>
+                            <a class="table-button" href="/trees/show/{{tree.id}}">View</a>
+                            <a class="table-button" href="/trees/update/{{tree.id}}">Edit</a>
+                            <a class="table-button" href="/trees/destroy/{{tree.id}}">Delete</a>
+                        </td>
+                    {%endif%}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

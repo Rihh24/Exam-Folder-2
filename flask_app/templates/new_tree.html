@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/new_tree.css">
+    <style>
+        .flash_message{
+            color: red;
+        }
+    </style>
+</head>
+<body background="/static/images/background.jpeg">
+    <div class="container">
+        <div class="nav-bar">
+            <div class="left-nav">
+                <h1 class="site-title">Arbotrary</h1>
+                <p>A site to track randomly planted trees!</p>
+            </div>
+            <div class="middle-nav">
+                <img class="tree-pic" src="/static/images/tree_image_2.png" alt="">
+            </div>
+            <div class="right-nav">
+                <h1 class="users_name">Welcome {{user.first_name}} {{user.last_name}}</h1>
+                <div class="nav-buttons">
+                    <a class="nav-button" href="/trees/user">My Trees!</a>
+                    <a class="nav-button" href="/trees">Home</a>
+                    <a class="nav-button" href="/logout">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-page">
+        <form action="/trees/create/submit" method="post" class="new-tree-form">
+            <h2 class="form-header">Submit a New Tree!</h2>
+            <div class="flash_message">
+                {% with messages = get_flashed_messages() %}    
+                {% if messages %}                            
+                    {% for message in messages %}            
+                        <p>{{message}}</p>                   
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <div class="form-group">
+                <label for="species">Tree Species:</label>
+                <input type="text" name="species" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" name="location" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason:</label>
+                <textarea id="reason" name="reason" rows="4" cols="30"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="date_planted">Date Planted:</label>
+                <input type="date" id="date_planted" name="date_planted" value="">
+            </div>
+            <input type="submit" value="Add Tree" class="btn btn-success">
+        </form>
+    </div>
+</body>
+</html>

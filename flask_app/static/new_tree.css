@@ -1,0 +1,69 @@
+.container{
+    width:auto;
+    height:auto;
+}
+
+.tree-pic{
+    width: 100px;
+    height: 100px;
+}
+.nav-bar{
+    display: flex;
+    background-color:forestgreen;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+
+}
+
+
+.left-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 390px;
+}
+
+.right-nav{
+    display: flex;
+    justify-content: center;
+    width: 410px;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 60px;
+    
+}
+
+.nav-buttons{
+    display: flex;
+    padding-bottom: 5px;
+}
+.nav-button{
+    color:rebeccapurple;
+    background-color:lightblue;
+    border-radius: 3px 3px 3px 3px;
+    overflow: hidden;
+    box-shadow: 0 0 4px;
+    padding: 2px;
+    margin: 4px;
+}
+
+
+.form-page{
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    margin: 2px auto;
+    border: 2px solid green;
+    padding: 2px;
+    background-color: burlywood;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+}
+.form-page label{
+    display:block;
+}
+
+.form-page input, textarea{
+    display:table-column;
+}

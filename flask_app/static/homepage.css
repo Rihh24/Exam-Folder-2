@@ -1,0 +1,111 @@
+.container{
+    width:auto;
+    height:auto;
+}
+
+.tree-pic{
+    width: 100px;
+    height: 100px;
+}
+.nav-bar{
+    display: flex;
+    background-color:forestgreen;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+
+}
+
+
+.left-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 390px;
+}
+
+.right-nav{
+    display: flex;
+    justify-content: center;
+    width: 410px;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 60px;
+    
+}
+
+.nav-buttons{
+    display: flex;
+    padding-bottom: 5px;
+}
+.nav-button{
+    color:rebeccapurple;
+    background-color:lightblue;
+    border-radius: 3px 3px 3px 3px;
+    overflow: hidden;
+    box-shadow: 0 0 4px;
+    padding: 2px;
+    margin: 4px;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.head-of-table{
+    color:black;
+    font-size:xx-large;
+    font-family: sans-serif;
+}
+
+.table-button{
+    color:rebeccapurple;
+    background-color:lightblue;
+    border-radius: 3px 3px 3px 3px;
+    overflow: hidden;
+    box-shadow: 0 0 4px;
+    padding: 2px;
+    margin: 4px;
+}
+
+
+table{
+    margin:25px 0;
+    min-width: 800px;
+    border-radius: 4px;
+    box-shadow: 1 1 5px;
+}
+
+
+.tree-table thead tr{
+    background-color: burlywood;
+    color: black;
+    width: 800px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.tree-table th,
+.tree-table td{
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.tree-table tbody tr{
+    border-bottom: 2px solid black;
+}
+
+.tree-table tbody tr:nth-of-type(even){
+    background-color:lightgreen;
+
+}
+
+.tree-table tbody tr:nth-of-type(odd){
+    background-color:dodgerblue;
+
+}
